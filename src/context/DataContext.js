@@ -30,7 +30,7 @@ export const DataProvider = ({ children }) => {
     category: categories,
     filteredVideos: videos,
   };
-  console.log(videoState);
+
   const [state, dispatch] = useReducer(DataReducer, videoState);
 
   const createPlaylist = (playlist) => {

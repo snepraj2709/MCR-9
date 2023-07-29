@@ -21,7 +21,6 @@ function PlaylistModal({ close, currentVideo }) {
   console.log(checkedPlaylists);
 
   const submitPlaylist = () => {
-    console.log(checkedPlaylists);
     updatePlaylist();
   };
 
