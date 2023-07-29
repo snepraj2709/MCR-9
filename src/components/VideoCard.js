@@ -16,7 +16,7 @@ function VideoCard({ data }) {
   //console.log(data);
 
   return (
-    <div className="flex flex-col shadow-md p-4 max-w-md mx-auto">
+    <div className="flex flex-col shadow-md p-4 max-w-md mx-auto w-85 h-45 aspect-w-16 aspect-h-9 my-auto">
       <div className="relative mx-auto">
         <img src={thumbnail} alt={title} className="object-center" />
         <button

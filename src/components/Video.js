@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { avatar } from "../utils/constants";
 import {
   MdWatchLater,
@@ -25,11 +24,15 @@ function Video({ video }) {
   }
 
   return (
-    <div className="col-span-6 md:col-span-4 flex flex-col shadow-md p-4  mx-auto w-full">
-      <div className="relative mx-auto">
-        <img src={thumbnail} alt={title} className="object-center" />
+    <div className="col-span-6 md:col-span-4 flex flex-col shadow-md p-4 justify-start w-full bg-white rounded-lg">
+      <div className="relative">
+        <img
+          src={thumbnail}
+          alt={title}
+          className="object-cover w-full h-70 rounded-lg"
+        />
         <button
-          className="absolute top-2 right-2 cursor-pointer bg-white rounded-full p-1"
+          className="absolute top-2 left-2 cursor-pointer bg-white rounded-full p-1 shadow-md"
           onClick={() =>
             watchLater ? removeFromWatchlist(video) : addToWatchlist(video)
           }>
@@ -40,18 +43,22 @@ function Video({ video }) {
           )}
         </button>
       </div>
-      <span className="flex text-sm font-small text-gray-800 pt-1">
+      <span className="text-sm font-small text-gray-800 pt-1">
         {views} Views | {creator}
       </span>
-      <div className="flex justify-between mx-auto mt-3">
-        <img src={avatar} alt={creator} className="w-10 h-10 rounded-full " />
-        <div className="flex flex-row justify-start w-full">
-          <h2 className="text-base font-medium pl-3">{title}</h2>
+      <div className="flex items-center mt-3">
+        <img
+          src={avatar}
+          alt={creator}
+          className="w-10 h-10 rounded-full mr-3"
+        />
+        <div className="flex flex-row items-center w-full">
+          <h2 className="text-lg font-medium">{title}</h2>
           <button onClick={playlistHandler}>
             {!playlists?.length > 0 ? (
-              <MdPlaylistAddCircle className="w-6 h-6 " />
+              <MdPlaylistAddCircle className="w-6 h-6 ml-2 text-blue-700" />
             ) : (
-              <MdPlaylistAddCheckCircle className="w-6 h-6 " />
+              <MdPlaylistAddCheckCircle className="w-6 h-6 ml-2 text-blue-700" />
             )}
           </button>
           {playlistModal && (

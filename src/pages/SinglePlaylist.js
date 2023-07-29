@@ -15,15 +15,16 @@ function SinglePlaylist() {
   return (
     <div className="grid grid-cols-8 overflow-hidden mx-auto lg:max-w-6xl px-5">
       <Sidebar className="fixed top-0" />
-      <div className="col-span-6 md:col-span-4">
-        <h2 className="text-base font-bold text-center">{playlistName}</h2>
-        {currentPlaylist?.videos?.map((video) => (
-          <div key={video._id}>
-            <VideoCard data={video} />
-          </div>
-        ))}
+      <div className="col-span-6">
+        <h2 className="font-bold text-2xl text-center">{playlistName}</h2>
+        <div className="flex flex-wrap">
+          {currentPlaylist?.videos?.map((video) => (
+            <div key={video._id} className="w-1/2 p-2">
+              <VideoCard data={video} />
+            </div>
+          ))}
+        </div>
       </div>
-      <Suggestions />
     </div>
   );
 }

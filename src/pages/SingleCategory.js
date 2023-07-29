@@ -17,17 +17,16 @@ function SingleCategory() {
   return (
     <div className="grid grid-cols-8  mx-auto lg:max-w-6xl px-5">
       <Sidebar className="fixed top-0" />
-      <div className="col-span-6 md:col-span-4 flex flex-col">
-        <h2 className="font-bold text-md">Categories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-2 space-y-2">
+      <div className="col-span-6 flex flex-col">
+        <h2 className="font-bold text-2xl">{categoryName}</h2>
+        <div className="flex flex-wrap">
           {videosOfThisCategory?.map((video) => (
-            <div key={video._id}>
+            <div key={video._id} className="w-1/2 p-2">
               <VideoCard data={video} />
             </div>
           ))}
         </div>
       </div>
-      <Suggestions />
     </div>
   );
 }
