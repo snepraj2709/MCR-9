@@ -9,7 +9,7 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const localStorageToken = JSON.parse(localStorage.getItem("state"));
 
-  const playlistMap = localStorageToken.allVideos.reduce((acc, curr) => {
+  const playlistMap = videos?.reduce((acc, curr) => {
     const playlists = curr.playlists || [];
     playlists.forEach((playlist) => {
       if (!acc[playlist]) {

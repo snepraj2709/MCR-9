@@ -12,11 +12,9 @@ import PlaylistModal from "./PlaylistModal";
 
 function Video({ video }) {
   const [playlistModal, setPlaylistModal] = useState(false);
-  const { _id, title, views, thumbnail, src, creator, watchLater, playlists } =
-    video;
+  const { title, views, thumbnail, creator, watchLater, playlists } = video;
   const { addToWatchlist, removeFromWatchlist, addNote, deleteNote } =
     useData();
-  const navigate = useNavigate();
 
   const playlistHandler = () => {
     setPlaylistModal(true);
