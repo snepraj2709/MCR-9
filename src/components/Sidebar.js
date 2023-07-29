@@ -5,25 +5,42 @@ import {
   MdWatchLater,
   MdPlaylistAddCircle,
 } from "../utils/icons";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  const navigate = useNavigate();
+
   return (
     <div className="col-span-2 space-y-2 mt-5 p-5 sticky top-0">
       <span className="flex text-center m-2">
         <MdHome className="w-6 h-6 mx-1" />
-        <b className="hidden md:inline-block">Home</b>
+        <b className="hidden md:inline-block" onClick={() => navigate("/")}>
+          Home
+        </b>
       </span>
       <span className="flex text-center m-2">
         <MdExplore className="w-6 h-6 mx-1" />
-        <b className="hidden md:inline-block">Explore</b>
+        <b
+          className="hidden md:inline-block"
+          onClick={() => navigate("/explore")}>
+          Explore
+        </b>
       </span>
       <span className="flex text-center m-2">
         <MdWatchLater className="w-6 h-6 mx-1" />
-        <b className="hidden md:inline-block">WatchLater</b>
+        <b
+          className="hidden md:inline-block"
+          onClick={() => navigate("/watchlist")}>
+          WatchLater
+        </b>
       </span>
       <span className="flex text-center m-2">
         <MdPlaylistAddCircle className="w-6 h-6 mx-1" />
-        <b className="hidden md:inline-block">Playlist</b>
+        <b
+          className="hidden md:inline-block"
+          onClick={() => navigate("/playlist")}>
+          Playlist
+        </b>
       </span>
     </div>
   );

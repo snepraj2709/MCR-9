@@ -9,8 +9,12 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const videoState = {
     allVideos: videos,
-    playlists: [{ id: 1, name: "Music", videos: [] }],
+    playlists: [
+      { id: 1, name: "Music", videos: [] },
+      { id: 2, name: "Art", videos: [] },
+    ],
     category: categories,
+    filteredVideos: videos,
   };
   const localStorageToken = JSON.parse(localStorage.getItem("state"));
 
@@ -32,12 +36,8 @@ export const DataProvider = ({ children }) => {
     dispatch({ type: actions.RemoveFromWatchlist, payload: video });
   };
 
-  const addToPlaylist = (playlist) => {
+  const updatePlaylist = (playlist) => {
     dispatch({ type: actions.AddToPlaylist, payload: playlist });
-  };
-
-  const removeFromPlaylist = (playlist) => {
-    dispatch({ type: actions.RemoveFromPlaylist, payload: playlist });
   };
 
   const addNote = (video) => {
@@ -68,8 +68,7 @@ export const DataProvider = ({ children }) => {
         deletePlaylist,
         addToWatchlist,
         removeFromWatchlist,
-        addToPlaylist,
-        removeFromPlaylist,
+        updatePlaylist,
         addNote,
         deleteNote,
       }}>

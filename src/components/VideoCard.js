@@ -1,4 +1,4 @@
-import React from "react";
+import { avatar } from "../utils/constants";
 import {
   MdWatchLater,
   MdOutlineWatchLater,
@@ -6,15 +6,18 @@ import {
   MdPlaylistAddCheckCircle,
 } from "../utils/icons";
 import { useData } from "../context/DataContext";
+import { useNavigate } from "react-router-dom";
 
 function VideoCard({ data }) {
-  const avatar = "https://picsum.photos/30/30";
-  const { title, views, thumbnail, src, creator, watchLater } = data;
+  const { _id, title, views, thumbnail, src, creator, watchLater } = data;
   const { addToWatchlist, removeFromWatchlist } = useData();
+  const navigate = useNavigate();
+
+  //console.log(data);
 
   return (
     <div className="flex flex-col shadow-md p-4 cursor-pointer max-w-md mx-auto">
-      <div className="relative mx-auto">
+      <div className="relative mx-auto" onClick={() => navigate(`/${_id}`)}>
         <img src={thumbnail} alt={title} className="object-center" />
         <button
           className="absolute top-2 right-2 cursor-pointer bg-white rounded-full p-1"

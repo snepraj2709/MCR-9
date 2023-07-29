@@ -5,10 +5,10 @@ const {
   DeletePlaylist,
   AddToWatchlist,
   RemoveFromWatchlist,
-  AddToPlaylist,
-  RemoveFromPlaylist,
+  updatePlaylist,
   AddNote,
   DeleteNote,
+  FilterVideo,
 } = actions;
 
 export const DataReducer = (state, { type, payload }) => {
@@ -36,7 +36,7 @@ export const DataReducer = (state, { type, payload }) => {
             : [...acc, curr],
         []
       );
-      return { state, allVideos: updatedVideos };
+      return { ...state, allVideos: updatedVideos };
     }
 
     case RemoveFromWatchlist: {
@@ -47,15 +47,13 @@ export const DataReducer = (state, { type, payload }) => {
             : [...acc, curr],
         []
       );
-      return { state, allVideos: updatedVideos };
+      return { ...state, allVideos: updatedVideos };
     }
 
-    case AddToPlaylist: {
-      return { state, playlists: [...state.playlists, payload] };
+    case updatePlaylist: {
+      return { ...state, playlists: [...state.playlists, payload] };
     }
-    case RemoveFromPlaylist: {
-      return { state, playlists: [...state.playlists, payload] };
-    }
+
     case AddNote: {
       const updatedVideos = state.allVideos.reduce(
         (acc, curr) =>
@@ -63,7 +61,7 @@ export const DataReducer = (state, { type, payload }) => {
         []
       );
       return {
-        state,
+        ...state,
         allVideos: updatedVideos,
       };
     }
@@ -74,9 +72,15 @@ export const DataReducer = (state, { type, payload }) => {
         []
       );
       return {
-        state,
+        ...state,
         allVideos: updatedVideos,
       };
+    }
+    case FilterVideo: {
+      const videos = state.allVideos.filter(
+        (video) => video.category.toLowerCase() === payload.toLowerCase()
+      );
+      return { ...state, filteredVideos: videos };
     }
 
     default:

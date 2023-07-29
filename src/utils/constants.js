@@ -5,10 +5,13 @@ export const actions = {
   AddToWatchlist: "ADD_TO_WATCH_LATER",
   RemoveFromWatchlist: "REMOVE_FROM_WATCH_LATER",
 
-  AddToPlaylist: "ADD_TO_PLAYLIST",
-  RemoveFromPlaylist: "REMOVE_FROM_PLAYLIST",
+  UpdatePlaylist: "UPDATE_PLAYLIST",
 
   AddNote: "ADD_NOTE",
   UpdateNote: "UPDATE_NOTE",
   DeleteNote: "DELETE_NOTE",
+
+  FilterVideo: "FILTER_VIDEO",
 };
+
+export const avatar = "https://picsum.photos/30/30";
