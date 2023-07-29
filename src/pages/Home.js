@@ -1,7 +1,13 @@
+import Feed from "../components/Feed";
+import Sidebar from "../components/Sidebar";
+import Suggestions from "../components/Suggestions";
+
 export default function Home() {
   return (
-    <div className="text-3xl font-bold underline">
-      <p>Home Page</p>
+    <div className="grid grid-cols-8 overflow-hidden mx-auto lg:max-w-6xl px-5">
+      <Sidebar className="fixed top-0" />
+      <Feed />
+      <Suggestions />
     </div>
   );
 }
