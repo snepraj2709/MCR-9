@@ -6,6 +6,7 @@ import VideoDetail from "./pages/VideoDetail";
 import Watchlist from "./pages/Watchlist";
 import Playlist from "./pages/Playlist";
 import SinglePlaylist from "./pages/SinglePlaylist";
+import SingleCategory from "./pages/SingleCategory";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/playlist/:playlistName" element={<SinglePlaylist />} />
+        <Route path="/category/:categoryName" element={<SingleCategory />} />
       </Routes>
     </div>
   );

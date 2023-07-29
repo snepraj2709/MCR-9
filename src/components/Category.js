@@ -9,7 +9,8 @@ function Category({ cat }) {
 
   const clickHandler = () => {
     dispatch({ type: actions.FilterVideo, payload: category });
-    navigate("/explore");
+
+    navigate(`/category/${category}`);
   };
   return (
     <div className="shadow-md cursor-pointer" onClick={clickHandler}>
