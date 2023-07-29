@@ -12,7 +12,7 @@ import PlaylistModal from "./PlaylistModal";
 
 function Video({ video }) {
   const [playlistModal, setPlaylistModal] = useState(false);
-  const { _id, title, views, thumbnail, src, creator, watchLater, playlist } =
+  const { _id, title, views, thumbnail, src, creator, watchLater, playlists } =
     video;
   const { addToWatchlist, removeFromWatchlist, addNote, deleteNote } =
     useData();
@@ -27,8 +27,8 @@ function Video({ video }) {
   }
 
   return (
-    <div className="col-span-6 md:col-span-4 flex flex-col shadow-md p-4 cursor-pointer mx-auto w-full">
-      <div className="relative mx-auto" onClick={() => navigate(`/${_id}`)}>
+    <div className="col-span-6 md:col-span-4 flex flex-col shadow-md p-4  mx-auto w-full">
+      <div className="relative mx-auto">
         <img src={thumbnail} alt={title} className="object-center" />
         <button
           className="absolute top-2 right-2 cursor-pointer bg-white rounded-full p-1"
@@ -49,12 +49,9 @@ function Video({ video }) {
         <img src={avatar} alt={creator} className="w-10 h-10 rounded-full " />
         <div className="flex flex-row justify-start w-full">
           <h2 className="text-base font-medium pl-3">{title}</h2>
-          <button>
-            {!playlist ? (
-              <MdPlaylistAddCircle
-                className="w-6 h-6 "
-                onClick={playlistHandler}
-              />
+          <button onClick={playlistHandler}>
+            {!playlists?.length > 0 ? (
+              <MdPlaylistAddCircle className="w-6 h-6 " />
             ) : (
               <MdPlaylistAddCheckCircle className="w-6 h-6 " />
             )}

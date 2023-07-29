@@ -16,8 +16,8 @@ function VideoCard({ data }) {
   //console.log(data);
 
   return (
-    <div className="flex flex-col shadow-md p-4 cursor-pointer max-w-md mx-auto">
-      <div className="relative mx-auto" onClick={() => navigate(`/${_id}`)}>
+    <div className="flex flex-col shadow-md p-4 max-w-md mx-auto">
+      <div className="relative mx-auto">
         <img src={thumbnail} alt={title} className="object-center" />
         <button
           className="absolute top-2 right-2 cursor-pointer bg-white rounded-full p-1"
@@ -25,13 +25,15 @@ function VideoCard({ data }) {
             watchLater ? removeFromWatchlist(data) : addToWatchlist(data)
           }>
           {watchLater ? (
-            <MdWatchLater className="w-6 h-6 text-blue-700" />
+            <MdWatchLater className="w-6 h-6 text-blue-700 cursor-pointer" />
           ) : (
-            <MdOutlineWatchLater className="w-6 h-6 text-blue-700" />
+            <MdOutlineWatchLater className="w-6 h-6 text-blue-700 cursor-pointer" />
           )}
         </button>
       </div>
-      <div className="flex justify-between mx-auto mt-3">
+      <div
+        className="flex justify-between mx-auto mt-3 cursor-pointer"
+        onClick={() => navigate(`/${_id}`)}>
         <img src={avatar} alt={creator} className="w-10 h-10 rounded-full " />
         <div className="flex flex-col justify-start">
           <h2 className="text-base font-medium pl-3">{title}</h2>

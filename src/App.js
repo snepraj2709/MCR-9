@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import VideoDetail from "./pages/VideoDetail";
+import Watchlist from "./pages/Watchlist";
 
 export default function App() {
   //
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/:videoId" element={<VideoDetail />} />
+        <Route path="/watchlist" element={<Watchlist />} />
       </Routes>
     </div>
   );
