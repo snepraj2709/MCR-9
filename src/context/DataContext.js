@@ -7,17 +7,30 @@ import { actions } from "../utils/constants";
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+  const localStorageToken = JSON.parse(localStorage.getItem("state"));
+
+  const playlistMap = localStorageToken.allVideos.reduce((acc, curr) => {
+    const playlists = curr.playlists || [];
+    playlists.forEach((playlist) => {
+      if (!acc[playlist]) {
+        acc[playlist] = {
+          id: Object.keys(acc).length + 1,
+          name: playlist,
+          videos: [],
+        };
+      }
+      acc[playlist].videos.push(curr);
+    });
+    return acc;
+  }, {});
+
   const videoState = {
     allVideos: videos,
-    playlists: [
-      { id: 1, name: "Music", videos: [] },
-      { id: 2, name: "Art", videos: [] },
-    ],
+    playlists: Object.values(playlistMap),
     category: categories,
     filteredVideos: videos,
   };
-  const localStorageToken = JSON.parse(localStorage.getItem("state"));
-
+  console.log(videoState);
   const [state, dispatch] = useReducer(DataReducer, videoState);
 
   const createPlaylist = (playlist) => {

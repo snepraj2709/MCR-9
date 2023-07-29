@@ -11,7 +11,7 @@ export const videos = [
     category: "Origami",
     creator: "PaperCraftPro",
     watchLater: "true",
-    playlists: ["Music", "Art"],
+    playlists: ["Music"],
   },
   {
     _id: 20,

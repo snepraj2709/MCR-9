@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import VideoDetail from "./pages/VideoDetail";
 import Watchlist from "./pages/Watchlist";
+import Playlist from "./pages/Playlist";
 
 export default function App() {
   //
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/:videoId" element={<VideoDetail />} />
         <Route path="/watchlist" element={<Watchlist />} />
+        <Route path="/playlist" element={<Playlist />} />
       </Routes>
     </div>
   );
