@@ -1,6 +1,5 @@
 import Feed from "../components/Feed";
 import Sidebar from "../components/Sidebar";
-import Suggestions from "../components/Suggestions";
 import { useData } from "../context/DataContext";
 
 function Watchlist() {

@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
 import Sidebar from "../components/Sidebar";
-import Suggestions from "../components/Suggestions";
 import { useData } from "../context/DataContext";
 
 function SingleCategory() {

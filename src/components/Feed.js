@@ -1,13 +1,12 @@
-import React from "react";
 import VideoCard from "./VideoCard";
 
 function Feed({ list, page }) {
   return (
     <div className="col-span-6 grid ">
       <h2 className="font-bold text-2xl">{page}</h2>
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-2 md:gap-4">
         {list?.map((video) => (
-          <div key={video._id} className="w-1/2 p-2">
+          <div key={video._id} className="">
             <VideoCard data={video} className="object-cover w-25 h-25" />
           </div>
         ))}

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   MdHome,
   MdExplore,
@@ -12,7 +11,7 @@ function Sidebar() {
 
   return (
     <div className="col-span-2 space-y-2 mt-5 p-5 sticky top-0">
-      <span className="flex justify-start m-2 cursor-pointer bg-slate-100 h-10  rounded-full w-auto outline-1">
+      <span className="flex justify-start pl-1 cursor-pointer bg-slate-100 h-10 rounded-full w-auto">
         <MdHome className="w-6 h-6 mx-1 my-auto" />
         <b
           className="hidden md:inline-block my-auto"
@@ -20,7 +19,7 @@ function Sidebar() {
           Home
         </b>
       </span>
-      <span className="flex text-center m-2 cursor-pointer bg-slate-100 h-10  rounded-full w-36">
+      <span className="flex justify-start pl-1 cursor-pointer bg-slate-100 h-10 rounded-full w-auto">
         <MdExplore className="w-6 h-6 mx-1 my-auto" />
         <b
           className="hidden md:inline-block my-auto"
@@ -28,7 +27,7 @@ function Sidebar() {
           Explore
         </b>
       </span>
-      <span className="flex text-center m-2 cursor-pointer bg-slate-100 h-10  rounded-full w-36">
+      <span className="flex justify-start pl-1 cursor-pointer bg-slate-100 h-10 rounded-full w-auto">
         <MdWatchLater className="w-6 h-6 mx-1 my-auto" />
         <b
           className="hidden md:inline-block my-auto"
@@ -36,7 +35,7 @@ function Sidebar() {
           WatchLater
         </b>
       </span>
-      <span className="flex text-center m-2 cursor-pointer bg-slate-100 h-10  rounded-full w-36">
+      <span className="flex justify-start pl-1 cursor-pointer bg-slate-100 h-10 rounded-full w-auto">
         <MdPlaylistAddCircle className="w-6 h-6 mx-1 my-auto" />
         <b
           className="hidden md:inline-block my-auto"

@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import Suggestions from "../components/Suggestions";
 import { useData } from "../context/DataContext";
 import VideoCard from "../components/VideoCard";
 
