@@ -3,6 +3,7 @@ import { DataReducer } from "../reducer/DataReducer";
 import { videos } from "../data/videos";
 import { categories } from "../data/categories";
 import { actions } from "../utils/constants";
+import { toast } from "react-hot-toast";
 
 export const DataContext = createContext();
 
@@ -35,30 +36,31 @@ export const DataProvider = ({ children }) => {
 
   const createPlaylist = (playlist) => {
     dispatch({ type: actions.CreatePlaylist, payload: playlist });
+    toast.success("Created Playlist");
   };
 
   const deletePlaylist = (id) => {
     dispatch({ type: actions.DeletePlaylist, payload: id });
+    toast.error("Deleted Playlist");
   };
 
   const addToWatchlist = (video) => {
     dispatch({ type: actions.AddToWatchlist, payload: video });
+    toast.success("Added to Watchlist");
   };
 
   const removeFromWatchlist = (video) => {
     dispatch({ type: actions.RemoveFromWatchlist, payload: video });
+    toast.success("Removed from Watchlist");
   };
 
   const updatePlaylist = (playlist) => {
     dispatch({ type: actions.AddToPlaylist, payload: playlist });
+    toast.success("Updated Playlist");
   };
 
-  const addNote = (video) => {
-    dispatch({ type: actions.AddNote, payload: video });
-  };
-
-  const deleteNote = (video) => {
-    dispatch({ type: actions.DeleteNote, payload: video });
+  const updateNote = (video) => {
+    dispatch({ type: actions.UpdateNote, payload: video });
   };
 
   useEffect(() => {
@@ -82,8 +84,7 @@ export const DataProvider = ({ children }) => {
         addToWatchlist,
         removeFromWatchlist,
         updatePlaylist,
-        addNote,
-        deleteNote,
+        updateNote,
       }}>
       {children}
     </DataContext.Provider>

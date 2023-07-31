@@ -7,10 +7,12 @@ import Watchlist from "./pages/Watchlist";
 import Playlist from "./pages/Playlist";
 import SinglePlaylist from "./pages/SinglePlaylist";
 import SingleCategory from "./pages/SingleCategory";
+import ToastWrapper from "./components/ToastWrapper";
 
 export default function App() {
   return (
     <div className="App">
+      <ToastWrapper />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
