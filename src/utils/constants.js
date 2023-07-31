@@ -7,9 +7,7 @@ export const actions = {
 
   UpdatePlaylist: "UPDATE_PLAYLIST",
 
-  AddNote: "ADD_NOTE",
   UpdateNote: "UPDATE_NOTE",
-  DeleteNote: "DELETE_NOTE",
 
   FilterVideo: "FILTER_VIDEO",
 };

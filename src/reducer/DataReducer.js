@@ -5,9 +5,8 @@ const {
   DeletePlaylist,
   AddToWatchlist,
   RemoveFromWatchlist,
-  updatePlaylist,
-  AddNote,
-  DeleteNote,
+  UpdatePlaylist,
+  UpdateNote,
   FilterVideo,
 } = actions;
 
@@ -50,14 +49,16 @@ export const DataReducer = (state, { type, payload }) => {
       return { ...state, allVideos: updatedVideos };
     }
 
-    case updatePlaylist: {
+    case UpdatePlaylist: {
       return { ...state, playlists: [...state.playlists, payload] };
     }
 
-    case AddNote: {
+    case UpdateNote: {
       const updatedVideos = state.allVideos.reduce(
         (acc, curr) =>
-          curr._id === payload._id ? [acc, ...payload] : [acc, ...curr],
+          curr._id === payload._id
+            ? [...acc, { ...payload }]
+            : [...acc, { ...curr }],
         []
       );
       return {
@@ -65,7 +66,7 @@ export const DataReducer = (state, { type, payload }) => {
         allVideos: updatedVideos,
       };
     }
-    case DeleteNote: {
+    case UpdateNote: {
       const updatedVideos = state.allVideos.reduce(
         (acc, curr) =>
           curr._id === payload._id ? [acc, ...payload] : [acc, ...curr],
