@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const localStorageToken = JSON.parse(localStorage.getItem("state"));
+  // const localStorageToken = JSON.parse(localStorage.getItem("state"));
 
   const playlistMap = videos?.reduce((acc, curr) => {
     const playlists = curr.playlists || [];
@@ -36,7 +36,6 @@ export const DataProvider = ({ children }) => {
 
   const createPlaylist = (playlist) => {
     dispatch({ type: actions.CreatePlaylist, payload: playlist });
-    toast.success("Created Playlist");
   };
 
   const deletePlaylist = (id) => {
@@ -56,7 +55,6 @@ export const DataProvider = ({ children }) => {
 
   const updatePlaylist = (playlist) => {
     dispatch({ type: actions.AddToPlaylist, payload: playlist });
-    toast.success("Updated Playlist");
   };
 
   const updateNote = (video) => {

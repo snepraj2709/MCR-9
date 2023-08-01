@@ -1,44 +1,66 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useData } from "../context/DataContext";
 import { MdCancel, MdAddCircle } from "../utils/icons";
+import { toast } from "react-hot-toast";
+import { isUnique, mergedPlaylist, toggledPlaylist } from "../utils/function";
 
 function PlaylistModal({ close, currentVideo }) {
   const [createNew, setCreateNew] = useState(false);
   const [nameOfPlaylist, setNameOfPlaylist] = useState("");
-  const [checkedPlaylists, setCheckedPlaylists] = useState([]);
   const { state, createPlaylist, updatePlaylist } = useData();
 
-  const togglePlaylistCheckbox = (name) => {
-    const isChecked = checkedPlaylists.includes(name);
-    if (isChecked) {
-      setCheckedPlaylists((prev) =>
-        prev.filter((playlist) => playlist !== name)
-      );
-    } else {
-      setCheckedPlaylists((prev) => [...prev, name]);
-    }
+  const merge = mergedPlaylist(currentVideo, state?.playlists);
+  const [allPlaylists, setAllPlaylists] = useState(merge);
+
+  const toggleCheckbox = (playlist) => {
+    const updatePlaylists = toggledPlaylist(
+      allPlaylists,
+      playlist,
+      currentVideo
+    );
+    setAllPlaylists(updatePlaylists);
   };
-  console.log(checkedPlaylists);
 
   const submitPlaylist = () => {
-    updatePlaylist();
+    const unique = isUnique(nameOfPlaylist, state?.playlists);
+    if (unique) {
+      updatePlaylist(allPlaylists);
+      toast.success(`Added video to playlist`);
+      close();
+    } else {
+      toast("A playlist with this name already exists", {
+        icon: "⚠️",
+      });
+    }
+    setNameOfPlaylist("");
   };
 
   const createNewPlaylist = () => {
-    const newPlaylist = {
-      id: state.playlists.length + 1,
-      name: nameOfPlaylist,
-      videos: [{ ...currentVideo }],
-    };
-    setCreateNew(false);
-    createPlaylist(newPlaylist);
-  };
+    const unique = isUnique(nameOfPlaylist, state?.playlists);
 
-  useEffect(() => {
-    if (currentVideo && currentVideo.playlists) {
-      setCheckedPlaylists(currentVideo.playlists);
+    if (nameOfPlaylist.length > 0) {
+      if (unique) {
+        const newPlaylist = {
+          id: state?.playlists.length + 1,
+          name: nameOfPlaylist,
+          videos: [{ ...currentVideo }],
+        };
+        setAllPlaylists([...allPlaylists, { ...newPlaylist }]);
+        setCreateNew(false);
+        createPlaylist(newPlaylist);
+        toast.success(`Created ${nameOfPlaylist} Playlist`);
+      } else {
+        toast("A playlist with this name already exists", {
+          icon: "⚠️",
+        });
+      }
+    } else {
+      toast("You can't create an empty playlist", {
+        icon: "🙄",
+      });
     }
-  }, [currentVideo]);
+    setNameOfPlaylist("");
+  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -51,14 +73,14 @@ function PlaylistModal({ close, currentVideo }) {
           />
         </div>
         <div id="1">
-          {state?.playlists?.map((playlist) => (
+          {allPlaylists?.map((playlist) => (
             <div key={playlist?.id} className="mb-2" id="2">
               <label className="flex items-center">
                 <input
                   type="checkbox"
                   className="mr-2"
-                  checked={currentVideo?.playlists?.includes(playlist.name)}
-                  onChange={() => togglePlaylistCheckbox(playlist.name)}
+                  checked={playlist?.checked}
+                  onChange={() => toggleCheckbox(playlist)}
                 />
                 <span>{playlist?.name}</span>
               </label>
