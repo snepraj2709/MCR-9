@@ -11,10 +11,8 @@ function SingleCategory() {
     (video) => video.category.toLowerCase() === categoryName.toLowerCase()
   );
 
-  console.log(videosOfThisCategory);
-
   return (
-    <div className="grid grid-cols-8  lg:max-w-6xl px-5">
+    <div className="grid grid-cols-8  lg:max-w-6xl">
       <Sidebar className="fixed top-0" />
       <div className="col-span-6 flex flex-col">
         <h2 className="font-bold text-2xl ml-8">{categoryName}</h2>

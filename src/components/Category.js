@@ -4,11 +4,14 @@ import { actions } from "../utils/constants";
 
 function Category({ cat }) {
   const { thumbnail, category } = cat;
-  const { dispatch } = useData();
+  const { state, dispatch } = useData();
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    dispatch({ type: actions.FilterVideo, payload: category });
+    const videos = state.allVideos.filter(
+      (video) => video.category.toLowerCase() === category.toLowerCase()
+    );
+    dispatch({ type: actions.FilterVideo, payload: videos });
     navigate(`/category/${category}`);
   };
   return (

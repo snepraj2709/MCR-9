@@ -9,8 +9,8 @@ function VideoCard({ data }) {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col pb-2 shadow-lg max-w-md rounded-lg">
-      <div className="relative mx-auto group border border-lg overflow-hidden">
+    <div className="flex flex-col p-2 drop-shadow-md shadow-lg max-w-md rounded-lg overflow-hidden">
+      <div className="relative group">
         <img
           src={thumbnail}
           alt={title}

@@ -10,7 +10,6 @@ function SinglePlaylist() {
     (playlist) => playlist.name === playlistName
   );
 
-  console.log(currentPlaylist);
   return (
     <div className="grid grid-cols-8 overflow-hidden mx-auto lg:max-w-6xl px-5">
       <Sidebar className="fixed top-0" />
