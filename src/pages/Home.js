@@ -1,4 +1,5 @@
 import Category from "../components/Category";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import { useData } from "../context/DataContext";
@@ -23,6 +24,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

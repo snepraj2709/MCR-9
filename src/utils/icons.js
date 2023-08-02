@@ -12,7 +12,15 @@ import {
   MdDelete,
   MdOutlineEditNote,
 } from "react-icons/md";
-import { FaUser, FaSun, FaMoon, FaYoutube } from "react-icons/fa";
+import {
+  FaUser,
+  FaSun,
+  FaMoon,
+  FaYoutube,
+  FaLinkedinIn,
+  FaGithub,
+  FaTwitter,
+} from "react-icons/fa";
 
 export {
   MdHome,
@@ -31,4 +39,7 @@ export {
   FaSun,
   FaMoon,
   FaYoutube,
+  FaLinkedinIn,
+  FaGithub,
+  FaTwitter,
 };
