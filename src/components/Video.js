@@ -39,7 +39,7 @@ function Video({ video }) {
         <iframe
           title={title}
           src={src}
-          className="object-contain w-full rounded-lg group-hover:scale-110 transition-transform duration-150 ease-in-out"
+          className="object-cover w-[100%] min-h-[20rem] rounded-lg group-hover:scale-110 transition-transform duration-150 ease-in-out"
         />
         <button
           className="absolute top-2 left-2 cursor-pointer bg-white rounded-full p-1 shadow-md"
