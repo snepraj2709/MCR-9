@@ -70,7 +70,7 @@ function Video({ video }) {
               className="cursor-pointer rounded-full"
               onClick={() => (like ? removeLike(video) : likeVideo(video))}>
               {like ? (
-                <BiSolidLike className="w-8 h-8  dark:text-white" />
+                <BiSolidLike className="w-8 h-8 text-blue-700 dark:text-white" />
               ) : (
                 <BiLike className="w-8 h-8 text-blue-700 dark:text-white" />
               )}
@@ -97,7 +97,7 @@ function Video({ video }) {
               {!playlists?.length > 0 ? (
                 <MdPlaylistAddCircle className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
               ) : (
-                <MdPlaylistAddCheckCircle className="w-8 h-8 ml-2  dark:text-white" />
+                <MdPlaylistAddCheckCircle className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
               )}
             </button>
             <span className="my-auto hidden lg:inline-block">Playlist</span>
@@ -122,10 +122,8 @@ function Video({ video }) {
           <hr className="border-gray-800" />
           <h2 className="text-xl font-semibold py-2">My Notes</h2>
           <div className="flex space-x-2 align-middle justify-between">
-            <div className="flex">
-              <p className="text-lg font-normal my-auto">
-                {notes?.title?.toUpperCase()}{" "}
-              </p>
+            <div className="flex space-x-2">
+              <p className="text-lg font-normal my-auto">{notes?.title}</p>
               <p className="text-base font-normal my-auto ">
                 {notes?.description}
               </p>

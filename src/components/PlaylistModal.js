@@ -63,7 +63,7 @@ function PlaylistModal({ close, currentVideo }) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 dark:text-black">
       <div className="bg-slate-200 rounded-md p-4 w-96 shadow-lg">
         <div className="flex justify-between items-center mb-4">
           <p className="text-xl font-semibold">Add to Playlist</p>
