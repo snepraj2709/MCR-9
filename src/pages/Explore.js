@@ -23,7 +23,7 @@ export default function Explore() {
   };
 
   const classes =
-    "dark:bg-slate-500 bg-slate-100 shadow-md p-2 rounded-full h-8 object-cover text-sm font-medium mx-1 my-auto cursor-pointer ";
+    " bg-slate-100 shadow-md p-2 rounded-full h-8 object-cover text-sm font-medium mx-1 my-auto cursor-pointer ";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -35,7 +35,7 @@ export default function Explore() {
             <button
               className={`${classes} ${
                 currentCategory.toLowerCase() === "all"
-                  ? "text-blue-200 dark:text-white"
+                  ? "text-blue-500 dark:bg-slate-800 dark:text-white"
                   : "text-gray-800"
               }`}
               onClick={() => clickHandler("All")}>
@@ -45,8 +45,8 @@ export default function Explore() {
               <button
                 className={`${classes} ${
                   category.toLowerCase() === currentCategory.toLowerCase()
-                    ? "text-blue-500 dark:text-white"
-                    : "text-gray-800"
+                    ? "text-blue-500 dark:bg-slate-800 dark:text-white"
+                    : "text-gray-900"
                 }`}
                 onClick={() => clickHandler(category)}>
                 {category}
@@ -54,7 +54,6 @@ export default function Explore() {
             ))}
             <h2 className="font-bold text-2xl ml-4 pt-4">{currentCategory}</h2>
           </div>
-
           <Feed list={state?.filteredVideos} page="Explore" />
         </div>
       </div>
