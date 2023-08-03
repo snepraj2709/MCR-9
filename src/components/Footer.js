@@ -7,7 +7,7 @@ function Footer() {
         Made with <span className="font-extrabold text-lg">{"</>"}</span> by
         Sneha Prajapati
       </p>
-      <div className="flex justify-center space-x-2">
+      <div className="flex justify-center space-x-3">
         <a href="https://www.linkedin.com/in/sneha-prajapati/">
           <FaLinkedinIn className="w-6 h-6 cursor-pointer" />
         </a>

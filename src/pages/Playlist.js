@@ -11,11 +11,11 @@ function Playlist() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
+      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow mx-auto">
         <Sidebar />
-        <div className="col-span-6 grow">
+        <div className="col-span-6">
           <h2 className="font-bold text-2xl  ml-8">Playlists</h2>
-          <div className="flex flex-row m-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 m-2 p-2 md:gap-4">
             {state?.playlists?.map((playlist) => (
               <div
                 key={playlist.id}

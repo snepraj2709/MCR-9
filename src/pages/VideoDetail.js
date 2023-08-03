@@ -19,7 +19,7 @@ export default function VideoDetail() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
+      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow mx-auto">
         <Sidebar className="fixed top-0" />
         <Video video={currentVideo} />
         <Suggestions />
