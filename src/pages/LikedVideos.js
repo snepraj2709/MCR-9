@@ -1,4 +1,3 @@
-import Category from "../components/Category";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
@@ -15,7 +14,7 @@ function LikedVideos() {
       <div className="grid grid-cols-8 lg:max-w-6xl px-5 grow">
         <Sidebar className="sticky top-0" />
         <div className="col-span-6 flex flex-col ">
-          <h2 className="font-bold text-2xl ml-2">Liked Videos</h2>
+          <h2 className="font-bold text-2xl ml-4">Liked Videos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {likedVideos.length > 0 ? (
               likedVideos?.map((video) => (

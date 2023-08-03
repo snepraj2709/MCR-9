@@ -12,7 +12,10 @@ function Watchlist() {
       <Header />
       <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
         <Sidebar />
-        <Feed list={watchlist} page="Watchlist" />
+        <div className="flex flex-col col-span-6">
+          <h2 className="font-bold text-2xl ml-4">Watchlist</h2>
+          <Feed list={watchlist} page="Watchlist" />
+        </div>
       </div>
       <Footer />
     </div>

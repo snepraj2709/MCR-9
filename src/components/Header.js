@@ -26,7 +26,7 @@ function Header() {
   return (
     <div className="dark:bg-slate-800">
       <div className="flex flex-row justify-between my-2 lg:max-w-6xl w-100 mx-auto">
-        <div className="flex ml-3 md:ml-10">
+        <div className="flex ml-3 md:ml-10" onClick={() => navigate("/")}>
           <FaYoutube className="w-6 h-6 mx-1 my-auto text-red-600" />
           <h2 className="hidden md:inline-block my-auto font-sans text-lg font-bold">
             Vidtune

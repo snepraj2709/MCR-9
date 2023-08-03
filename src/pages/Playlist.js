@@ -14,7 +14,7 @@ function Playlist() {
       <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
         <Sidebar />
         <div className="col-span-6">
-          <h2 className="font-bold text-2xl  ml-8">Playlists</h2>
+          <h2 className=" font-bold text-2xl ml-4">Playlists</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-2 md:gap-4">
             {state?.playlists?.map((playlist) => (
               <div
