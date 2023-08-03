@@ -5,6 +5,9 @@ export const actions = {
   AddToWatchlist: "ADD_TO_WATCH_LATER",
   RemoveFromWatchlist: "REMOVE_FROM_WATCH_LATER",
 
+  LikeVideo: "LIKE_VIDEO",
+  RemoveLike: "REMOVE_LIKE",
+
   UpdatePlaylist: "UPDATE_PLAYLIST",
 
   UpdateNote: "UPDATE_NOTE",

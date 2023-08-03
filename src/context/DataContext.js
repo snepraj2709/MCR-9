@@ -53,6 +53,16 @@ export const DataProvider = ({ children }) => {
     toast.success("Removed from Watchlist");
   };
 
+  const likeVideo = (video) => {
+    dispatch({ type: actions.LikeVideo, payload: video });
+    toast.success("Added to likes");
+  };
+
+  const removeLike = (video) => {
+    dispatch({ type: actions.RemoveLike, payload: video });
+    toast.success("Removed from likes");
+  };
+
   const updatePlaylist = (playlist) => {
     dispatch({ type: actions.AddToPlaylist, payload: playlist });
   };
@@ -83,6 +93,8 @@ export const DataProvider = ({ children }) => {
         removeFromWatchlist,
         updatePlaylist,
         updateNote,
+        likeVideo,
+        removeLike,
       }}>
       {children}
     </DataContext.Provider>

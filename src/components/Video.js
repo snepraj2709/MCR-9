@@ -6,6 +6,8 @@ import {
   MdPlaylistAddCheckCircle,
   MdEdit,
   MdDelete,
+  BiLike,
+  BiSolidLike,
 } from "../utils/icons";
 import { useData } from "../context/DataContext";
 import { useState } from "react";
@@ -15,8 +17,15 @@ import { toast } from "react-hot-toast";
 
 function Video({ video }) {
   const [playlistModal, setPlaylistModal] = useState(false);
-  const { title, views, creator, src, watchLater, playlists, notes } = video;
-  const { addToWatchlist, removeFromWatchlist, updateNote } = useData();
+  const { title, views, like, creator, src, watchLater, playlists, notes } =
+    video;
+  const {
+    addToWatchlist,
+    removeFromWatchlist,
+    updateNote,
+    likeVideo,
+    removeLike,
+  } = useData();
   const [noteModal, setNoteModal] = useState("");
 
   function closePlaylistModal() {
@@ -45,46 +54,68 @@ function Video({ video }) {
       <span className="text-sm font-small text-gray-700 dark:text-gray-300 pt-4">
         {views} Views | {creator}
       </span>
-      <div className="flex mt-3">
-        <img
-          src={avatar}
-          alt={creator}
-          className="w-10 h-10 rounded-full mr-3"
-        />
-        <div className="flex flex-row items-center w-full justify-between ">
+      <div className="flex flex-col mt-3">
+        <div className="flex">
+          <img
+            src={avatar}
+            alt={creator}
+            className="w-10 h-10 rounded-full mr-3"
+          />
           <h2 className="text-lg font-medium">{title}</h2>
-          <div className="flex">
+        </div>
+
+        <div className="flex flex-row justify-between my-auto mt-2">
+          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
             <button
-              className="cursor-pointer rounded-full p-1 shadow-md"
+              className="cursor-pointer rounded-full"
+              onClick={() => (like ? removeLike(video) : likeVideo(video))}>
+              {like ? (
+                <BiSolidLike className="w-8 h-8  dark:text-white" />
+              ) : (
+                <BiLike className="w-8 h-8 text-blue-700 dark:text-white" />
+              )}
+            </button>
+            <span className="my-auto hidden lg:inline-block">Like</span>
+          </div>
+          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
+            <button
+              className="cursor-pointer rounded-full"
               onClick={() =>
                 watchLater ? removeFromWatchlist(video) : addToWatchlist(video)
               }>
               {watchLater ? (
                 <MdWatchLater className="w-8 h-8 text-blue-700 dark:text-white" />
               ) : (
-                <MdOutlineWatchLater className="w-8 h-8 text-blue-700 dark:text-white" />
+                <MdOutlineWatchLater className="w-8 h-8  dark:text-white" />
               )}
             </button>
+            <span className="my-auto hidden lg:inline-block">Watch Later</span>
+          </div>
+
+          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
             <button onClick={() => setPlaylistModal(true)}>
               {!playlists?.length > 0 ? (
                 <MdPlaylistAddCircle className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
               ) : (
-                <MdPlaylistAddCheckCircle className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
+                <MdPlaylistAddCheckCircle className="w-8 h-8 ml-2  dark:text-white" />
               )}
             </button>
+            <span className="my-auto hidden lg:inline-block">Playlist</span>
+          </div>
+
+          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
             <button onClick={() => setNoteModal(true)}>
               <MdEdit className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
             </button>
+            <span className="my-auto hidden lg:inline-block">Notes</span>
           </div>
-
-          {noteModal && (
-            <NoteModal close={closeNoteModal} currentVideo={video} />
-          )}
-
-          {playlistModal && (
-            <PlaylistModal close={closePlaylistModal} currentVideo={video} />
-          )}
         </div>
+
+        {noteModal && <NoteModal close={closeNoteModal} currentVideo={video} />}
+
+        {playlistModal && (
+          <PlaylistModal close={closePlaylistModal} currentVideo={video} />
+        )}
       </div>
       {notes?.title && (
         <div className="w-full py-2 h-auto">

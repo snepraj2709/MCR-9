@@ -1,5 +1,6 @@
 import {
   MdHome,
+  BiSolidLike,
   MdExplore,
   MdWatchLater,
   MdPlaylistAddCircle,
@@ -10,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 function Sidebar() {
   const navigate = useNavigate();
   const classes =
-    "flex justify-start pl-1 cursor-pointer bg-slate-100 h-10 rounded-full w-auto hover:text-blue-500 group my-2";
+    "flex justify-start px-1 cursor-pointer bg-slate-100 h-10 rounded-full hover:text-blue-500 group my-2";
 
   return (
     <div className="col-span-2 p-5">
@@ -23,6 +24,20 @@ function Sidebar() {
         }}>
         <MdHome className="w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out" />
         <b className="hidden md:inline-block my-auto">Home</b>
+      </NavLink>
+      <NavLink
+        to="/liked"
+        className={({ isActive }) => {
+          return isActive
+            ? `${classes} text-blue-500`
+            : `${classes} text-gray-800`;
+        }}>
+        <BiSolidLike className="w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out" />
+        <b
+          className="hidden md:inline-block my-auto"
+          onClick={() => navigate("/liked")}>
+          Liked
+        </b>
       </NavLink>
       <NavLink
         to="/explore"

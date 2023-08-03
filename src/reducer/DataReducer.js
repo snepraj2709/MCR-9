@@ -8,6 +8,8 @@ const {
   UpdatePlaylist,
   UpdateNote,
   FilterVideo,
+  LikeVideo,
+  RemoveLike,
 } = actions;
 
 export const DataReducer = (state, { type, payload }) => {
@@ -43,25 +45,24 @@ export const DataReducer = (state, { type, payload }) => {
       const updatedVideos = state.allVideos.map((video) =>
         video._id === payload._id ? { ...video, watchLater: true } : video
       );
-      localStorage.setItem(
-        "state",
-        JSON.stringify({
-          ...state,
-          allVideos: updatedVideos,
-        })
-      );
       return { ...state, allVideos: updatedVideos };
     }
     case RemoveFromWatchlist: {
       const updatedVideos = state.allVideos.map((video) =>
         video._id === payload._id ? { ...video, watchLater: false } : video
       );
-      localStorage.setItem(
-        "state",
-        JSON.stringify({
-          ...state,
-          allVideos: updatedVideos,
-        })
+      return { ...state, allVideos: updatedVideos };
+    }
+
+    case LikeVideo: {
+      const updatedVideos = state.allVideos.map((video) =>
+        video._id === payload._id ? { ...video, like: true } : video
+      );
+      return { ...state, allVideos: updatedVideos };
+    }
+    case RemoveLike: {
+      const updatedVideos = state.allVideos.map((video) =>
+        video._id === payload._id ? { ...video, like: false } : video
       );
       return { ...state, allVideos: updatedVideos };
     }
@@ -69,23 +70,14 @@ export const DataReducer = (state, { type, payload }) => {
       const updatedPlaylists = state.playlists?.map((playlist) =>
         playlist._id === payload._id ? { ...playlist, ...payload } : playlist
       );
-      localStorage.setItem(
-        "state",
-        JSON.stringify({
-          ...state,
-          playlists: updatedPlaylists,
-        })
-      );
+
       return { ...state, playlists: updatedPlaylists };
     }
     case UpdateNote: {
       const updatedVideos = state.allVideos.map((video) =>
         video._id === payload._id ? { ...payload } : video
       );
-      localStorage.setItem(
-        "state",
-        JSON.stringify({ ...state, allVideos: updatedVideos })
-      );
+
       return {
         ...state,
         allVideos: updatedVideos,

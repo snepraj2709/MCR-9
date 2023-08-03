@@ -3,6 +3,7 @@
 export const videos = [
   {
     _id: 19,
+    like: false,
     title: "Origami Swan - Simple and Elegant",
     views: 2879,
     chips: ["origami", "swan", "paper", "elegant"],
@@ -15,6 +16,7 @@ export const videos = [
   },
   {
     _id: 20,
+    like: true,
     title: "Kirigami Flower Bouquet - Beautiful Handmade Gift",
     views: 1756,
     chips: ["kirigami", "flower bouquet", "paper", "gift"],
@@ -25,6 +27,7 @@ export const videos = [
   },
   {
     _id: 21,
+    like: true,
     title: "Sculpting Animals from Polymer Clay - Step by Step Guide",
     views: 2251,
     chips: ["sculpture", "polymer clay", "animals", "crafts"],
@@ -37,6 +40,7 @@ export const videos = [
   },
   {
     _id: 22,
+    like: false,
     title: "Stop Motion Short Film - Adventure in Toyland",
     views: 3172,
     chips: ["stop motion", "short film", "toyland", "adventure"],
@@ -48,6 +52,7 @@ export const videos = [
   },
   {
     _id: 23,
+    like: false,
     title: "Handmade Pottery Vases - Decorating with Ceramic Glaze",
     views: 2879,
     chips: ["pottery", "clay", "vases", "ceramic glaze"],
@@ -58,6 +63,7 @@ export const videos = [
   },
   {
     _id: 24,
+    like: false,
     title: "Quilling Art Techniques - Creating Intricate Designs",
     views: 1756,
     chips: ["quilling", "paper art", "techniques", "intricate designs"],
@@ -69,6 +75,7 @@ export const videos = [
   },
   {
     _id: 25,
+    like: false,
     title: "Origami Crane Mobile - DIY Home Decor",
     views: 2251,
     chips: ["origami", "crane", "mobile", "paper", "home decor"],
@@ -80,6 +87,7 @@ export const videos = [
   },
   {
     _id: 26,
+    like: false,
     title: "Kirigami Birthday Pop-Up Box - Surprise Gift",
     views: 3172,
     chips: ["kirigami", "birthday pop-up box", "paper", "surprise gift"],
@@ -91,6 +99,7 @@ export const videos = [
   },
   {
     _id: 27,
+    like: false,
     title: "Sculpting Fantasy Creatures - Unleash Your Imagination",
     views: 2879,
     chips: ["sculpture", "fantasy creatures", "clay", "imagination"],
@@ -102,6 +111,7 @@ export const videos = [
   },
   {
     _id: 28,
+    like: false,
     title: "Stop Motion Animation Contest - Show Your Skills",
     views: 1756,
     chips: ["stop motion", "animation contest", "competition"],
@@ -112,6 +122,7 @@ export const videos = [
   },
   {
     _id: 29,
+    like: false,
     title: "Pottery Wheel Techniques - Creating Stunning Bowls",
     views: 2251,
     chips: ["pottery", "clay", "wheel techniques", "bowls"],
@@ -123,6 +134,7 @@ export const videos = [
   },
   {
     _id: 30,
+    like: false,
     title: "Quilling Greeting Cards - Handmade Cards for Every Occasion",
     views: 3172,
     chips: ["quilling", "greeting cards", "paper", "occasions"],
@@ -134,6 +146,7 @@ export const videos = [
   },
   {
     _id: 31,
+    like: false,
     title: "Origami Elephant - Step-by-Step Tutorial",
     views: 2879,
     chips: ["origami", "elephant", "paper", "tutorial"],
@@ -144,6 +157,7 @@ export const videos = [
   },
   {
     _id: 32,
+    like: false,
     title: "Kirigami Art Collage - Combining Paper Shapes",
     views: 1756,
     chips: ["kirigami", "art collage", "paper", "shapes"],
@@ -155,6 +169,7 @@ export const videos = [
   },
   {
     _id: 33,
+    like: false,
     title: "Sculpting Realistic Portraits - Mastering Human Faces",
     views: 2251,
     chips: ["sculpture", "realistic portraits", "clay", "human faces"],
@@ -166,6 +181,7 @@ export const videos = [
   },
   {
     _id: 34,
+    like: false,
     title: "Stop Motion Animation Tips and Tricks",
     views: 3172,
     chips: ["stop motion", "animation", "tips", "tricks"],
@@ -177,6 +193,7 @@ export const videos = [
   },
   {
     _id: 35,
+    like: false,
     title: "Pottery Art Exhibition - Celebrating Local Artists",
     views: 2879,
     chips: ["pottery", "clay", "art exhibition", "local artists"],
@@ -188,6 +205,7 @@ export const videos = [
   },
   {
     _id: 36,
+    like: false,
     title: "Quilling 3D Wall Art - Adding Depth to Paper Designs",
     views: 1756,
     chips: ["quilling", "3d wall art", "paper", "designs"],

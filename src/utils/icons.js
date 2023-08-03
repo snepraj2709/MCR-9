@@ -21,6 +21,7 @@ import {
   FaGithub,
   FaTwitter,
 } from "react-icons/fa";
+import { BiLike, BiSolidLike } from "react-icons/bi";
 
 export {
   MdHome,
@@ -42,4 +43,6 @@ export {
   FaLinkedinIn,
   FaGithub,
   FaTwitter,
+  BiLike,
+  BiSolidLike,
 };
