@@ -1,6 +1,5 @@
 import "./styles.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import VideoDetail from "./pages/VideoDetail";
 import Watchlist from "./pages/Watchlist";
@@ -9,6 +8,7 @@ import SinglePlaylist from "./pages/SinglePlaylist";
 import SingleCategory from "./pages/SingleCategory";
 import ToastWrapper from "./components/ToastWrapper";
 import LikedVideos from "./pages/LikedVideos";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
