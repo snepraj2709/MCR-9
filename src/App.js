@@ -9,6 +9,7 @@ import SingleCategory from "./pages/SingleCategory";
 import ToastWrapper from "./components/ToastWrapper";
 import LikedVideos from "./pages/LikedVideos";
 import Home from "./pages/Home";
+import UploadVideo from "./pages/UploadVideo";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/playlist/:playlistName" element={<SinglePlaylist />} />
         <Route path="/category/:categoryName" element={<SingleCategory />} />
+        <Route path="/upload" element={<UploadVideo />} />
       </Routes>
     </div>
   );

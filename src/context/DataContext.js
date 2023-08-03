@@ -30,6 +30,7 @@ export const DataProvider = ({ children }) => {
     playlists: Object.values(playlistMap),
     category: categories,
     filteredVideos: videos,
+    uploadedVideo: [],
   };
 
   const [state, dispatch] = useReducer(DataReducer, videoState);

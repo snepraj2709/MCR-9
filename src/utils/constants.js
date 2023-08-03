@@ -13,6 +13,8 @@ export const actions = {
   UpdateNote: "UPDATE_NOTE",
 
   FilterVideo: "FILTER_VIDEO",
+
+  UploadMedia: "UPLOAD_MEDIA",
 };
 
 export const avatar = "https://picsum.photos/30/30";

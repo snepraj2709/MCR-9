@@ -4,6 +4,7 @@ import {
   MdExplore,
   MdWatchLater,
   MdPlaylistAddCircle,
+  MdUpload,
 } from "../utils/icons";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -79,6 +80,20 @@ function Sidebar() {
           className="hidden md:inline-block my-auto"
           onClick={() => navigate("/playlist")}>
           Playlist
+        </b>
+      </NavLink>
+      <NavLink
+        to="/upload"
+        className={({ isActive }) => {
+          return isActive
+            ? `${classes} text-blue-500`
+            : `${classes} text-gray-800`;
+        }}>
+        <MdUpload className="sidebarIcon" />
+        <b
+          className="hidden md:inline-block my-auto"
+          onClick={() => navigate("/upload")}>
+          Upload
         </b>
       </NavLink>
     </div>

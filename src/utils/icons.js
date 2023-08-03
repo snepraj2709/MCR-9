@@ -11,6 +11,7 @@ import {
   MdEdit,
   MdDelete,
   MdOutlineEditNote,
+  MdUpload,
 } from "react-icons/md";
 import {
   FaUser,
@@ -45,4 +46,5 @@ export {
   FaTwitter,
   BiLike,
   BiSolidLike,
+  MdUpload,
 };

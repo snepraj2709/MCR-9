@@ -43,6 +43,7 @@ export default function Explore() {
             </button>
             {state?.category?.map(({ category }) => (
               <button
+                key={category._id}
                 className={`${classes} ${
                   category.toLowerCase() === currentCategory.toLowerCase()
                     ? "text-blue-500 dark:bg-slate-800 dark:text-white"

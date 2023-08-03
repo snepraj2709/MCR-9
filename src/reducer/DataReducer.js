@@ -10,6 +10,7 @@ const {
   FilterVideo,
   LikeVideo,
   RemoveLike,
+  UploadMedia,
 } = actions;
 
 export const DataReducer = (state, { type, payload }) => {
@@ -85,6 +86,13 @@ export const DataReducer = (state, { type, payload }) => {
     }
     case FilterVideo: {
       return { ...state, filteredVideos: payload };
+    }
+    case UploadMedia: {
+      return {
+        ...state,
+        allVideos: [...state.allVideos, payload],
+        uploadedVideo: [...state?.uploadedVideo, payload],
+      };
     }
     default:
       return state;

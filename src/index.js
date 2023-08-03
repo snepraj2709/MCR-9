@@ -1,15 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { DataContext, DataProvider } from "./context/DataContext";
 import { ThemeContext, ThemeProvider } from "./context/ThemeContext";
-
-const rootElement = document.getElementById("root");
 export { DataContext, ThemeContext };
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <ThemeProvider>
       <BrowserRouter>
@@ -18,6 +16,5 @@ ReactDOM.render(
         </DataProvider>
       </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>,
-  rootElement
+  </React.StrictMode>
 );
