@@ -22,7 +22,7 @@ function Sidebar() {
             ? `${classes} text-blue-500`
             : `${classes} text-gray-800`;
         }}>
-        <MdHome className="w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out" />
+        <MdHome className="sidebarIcon" />
         <b className="hidden md:inline-block my-auto">Home</b>
       </NavLink>
       <NavLink
@@ -32,7 +32,7 @@ function Sidebar() {
             ? `${classes} text-blue-500`
             : `${classes} text-gray-800`;
         }}>
-        <BiSolidLike className="w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out" />
+        <BiSolidLike className="sidebarIcon" />
         <b
           className="hidden md:inline-block my-auto"
           onClick={() => navigate("/liked")}>
@@ -46,7 +46,7 @@ function Sidebar() {
             ? `${classes} text-blue-500`
             : `${classes} text-gray-800`;
         }}>
-        <MdExplore className="w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out" />
+        <MdExplore className="sidebarIcon" />
         <b
           className="hidden md:inline-block my-auto"
           onClick={() => navigate("/explore")}>
@@ -60,7 +60,7 @@ function Sidebar() {
             ? `${classes} text-blue-500`
             : `${classes} text-gray-800`;
         }}>
-        <MdWatchLater className="w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out" />
+        <MdWatchLater className="sidebarIcon" />
         <b
           className="hidden md:inline-block my-auto"
           onClick={() => navigate("/watchlist")}>
@@ -74,7 +74,7 @@ function Sidebar() {
             ? `${classes} text-blue-500`
             : `${classes} text-gray-800`;
         }}>
-        <MdPlaylistAddCircle className="w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out" />
+        <MdPlaylistAddCircle className="sidebarIcon" />
         <b
           className="hidden md:inline-block my-auto"
           onClick={() => navigate("/playlist")}>

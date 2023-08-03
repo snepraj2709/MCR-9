@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .sidebarIcon {
+    @apply w-6 h-6 mx-2 my-auto group-hover:scale-125 transition-transform duration-150 ease-in-out;
+  }
+}

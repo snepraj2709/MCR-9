@@ -8,7 +8,6 @@ import { useData } from "../context/DataContext";
 function LikedVideos() {
   const { state } = useData();
   const likedVideos = state?.allVideos.filter((video) => video.like);
-  console.log(likedVideos);
 
   return (
     <div className="min-h-screen flex flex-col">
