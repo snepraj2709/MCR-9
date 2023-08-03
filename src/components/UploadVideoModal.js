@@ -3,6 +3,7 @@ import { useState } from "react";
 import { actions } from "../utils/constants";
 import { toast } from "react-hot-toast";
 import { useData } from "../context/DataContext";
+import { embedLink } from "../utils/function";
 
 function UploadVideoModal({ close }) {
   const { state, dispatch } = useData();
@@ -39,42 +40,45 @@ function UploadVideoModal({ close }) {
         </div>
         <div id="1">
           <div className="flex flex-col space-y-2">
-            <input
-              type="text"
-              placeholder="Title"
-              className="h-8 rounded-md pl-2"
-              value={uploadMedia.title}
-              onChange={(e) =>
-                setUploadMedia({ ...uploadMedia, title: e.target.value })
-              }
-            />
-            <input
-              type="text"
-              placeholder="Thumbnail"
-              className="h-8 rounded-md pl-2"
-              value={uploadMedia.description}
-              onChange={(e) =>
-                setUploadMedia({ ...uploadMedia, thumbnail: e.target.value })
-              }
-            />
-            <input
-              type="text"
-              placeholder="Source"
-              className="h-8 rounded-md pl-2"
-              value={uploadMedia.description}
-              onChange={(e) =>
-                setUploadMedia({ ...uploadMedia, src: e.target.value })
-              }
-            />
-            <input
-              type="text"
-              placeholder="Category"
-              className="h-8 rounded-md pl-2"
-              value={uploadMedia.description}
-              onChange={(e) =>
-                setUploadMedia({ ...uploadMedia, category: e.target.value })
-              }
-            />
+            <div className="flex">
+              <label className="pr-2">Title :</label>
+              <input
+                type="text"
+                placeholder="Title"
+                className="h-8 rounded-md pl-2"
+                value={uploadMedia.title}
+                onChange={(e) =>
+                  setUploadMedia({ ...uploadMedia, title: e.target.value })
+                }
+              />
+            </div>
+            <div className="flex">
+              <label className="pr-2">Thumbnail Pic :</label>
+              <input
+                type="text"
+                placeholder="Thumbnail"
+                className="h-8 rounded-md pl-2"
+                value={uploadMedia.thumbnail}
+                onChange={(e) =>
+                  setUploadMedia({ ...uploadMedia, thumbnail: e.target.value })
+                }
+              />
+            </div>
+            <div className="flex">
+              <label className="pr-2">Video Source :</label>
+              <input
+                type="text"
+                placeholder="Source"
+                className="h-8 rounded-md pl-2"
+                value={uploadMedia.src}
+                onChange={(e) =>
+                  setUploadMedia({
+                    ...uploadMedia,
+                    src: embedLink(e.target.value),
+                  })
+                }
+              />
+            </div>
           </div>
           <div className="space-x-2">
             <button

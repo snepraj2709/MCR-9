@@ -21,7 +21,7 @@ function CategoryCard({ currentCategory }) {
         className="flex flex-col h-full dark:bg-slate-700  rounded-lg w-72 mx-auto shadow-md"
         onClick={clickHandler}>
         <img
-          className="object-contain h-40 p-2 rounded-t-lg"
+          className="object-contain h-40 p-2 rounded-lg"
           src={thumbnail}
           alt={category}
         />

@@ -10,11 +10,11 @@ function VideoCard({ data }) {
 
   return (
     <div className="flex flex-col p-2 drop-shadow-md shadow-lg max-w-md rounded-lg overflow-hidden dark:bg-slate-800">
-      <div className="relative group">
+      <div className="relative group aspect-w-16 aspect-h-9">
         <img
           src={thumbnail}
           alt={title}
-          className="object-contain rounded-lg h-45 w-full group-hover:scale-110 transition-transform duration-150 ease-in-out"
+          className="object-cover rounded-lg w-full group-hover:scale-110 transition-transform duration-150 ease-in-out"
         />
         <button
           className="absolute top-2 right-2 cursor-pointer bg-white dark:bg-slate-900 rounded-full p-1"
@@ -29,7 +29,7 @@ function VideoCard({ data }) {
         </button>
       </div>
       <div
-        className="flex flex-row justify-between mx-auto mt-3 cursor-pointer"
+        className="flex flex-row justify-between mt-3 cursor-pointer"
         onClick={() => navigate(`/${_id}`)}>
         <img src={avatar} alt={creator} className="w-10 h-10 rounded-full " />
         <div className="flex flex-col flex-grow justify-start">
