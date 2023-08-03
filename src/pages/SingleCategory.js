@@ -14,9 +14,9 @@ function SingleCategory() {
   );
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 mx-auto lg:max-w-6xl">
+      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
         <Sidebar className="sticky top-0" />
         <div className="col-span-6 flex flex-col">
           <h2 className="font-bold text-2xl ml-8">{categoryName}</h2>

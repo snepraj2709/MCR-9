@@ -8,13 +8,13 @@ function Watchlist() {
   const { state } = useData();
   const watchlist = state?.allVideos?.filter((video) => video.watchLater);
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 overflow-hidden mx-auto lg:max-w-6xl px-5 grow">
-        <Sidebar className="fixed top-0" />
+      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
+        <Sidebar />
         <Feed list={watchlist} page="Watchlist" />
       </div>
-      <Footer className="mt-auto" />
+      <Footer />
     </div>
   );
 }
