@@ -16,7 +16,7 @@ function Category({ cat }) {
   };
   return (
     <div
-      className="shadow-md cursor-pointer group p-2 m-2 rounded-lg"
+      className="shadow-md cursor-pointer group p-2 m-2 rounded-lg dark:bg-slate-800"
       onClick={clickHandler}>
       <img
         src={thumbnail}

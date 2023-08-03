@@ -11,7 +11,7 @@ import ToastWrapper from "./components/ToastWrapper";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="min-h-screen p-0 w-full dark:bg-slate-900 dark:text-slate-50">
       <ToastWrapper />
       <Routes>
         <Route path="/" element={<Home />} />

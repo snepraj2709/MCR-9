@@ -2,7 +2,7 @@ import { FaLinkedinIn, FaGithub, FaTwitter } from "../utils/icons";
 
 function Footer() {
   return (
-    <div className="flex flex-col mx-auto text-center bg-blue-500 text-white py-2 m-0 space-y-2 w-full">
+    <div className="flex flex-col mx-auto text-center bg-blue-500 dark:bg-slate-800 text-white py-2 m-0 space-y-2 w-full">
       <p className="text-base font-medium">
         Made with <span className="font-extrabold text-lg">{"</>"}</span> by
         Sneha Prajapati

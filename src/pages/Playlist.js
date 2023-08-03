@@ -9,18 +9,18 @@ function Playlist() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 overflow-hidden mx-auto lg:max-w-6xl px-5">
-        <Sidebar className="fixed top-0" />
-        <div className="col-span-6">
+      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
+        <Sidebar />
+        <div className="col-span-6 grow">
           <h2 className="font-bold text-2xl  ml-8">Playlists</h2>
           <div className="flex flex-row m-2">
             {state?.playlists?.map((playlist) => (
               <div
                 key={playlist.id}
                 onClick={() => navigate(`/playlist/${playlist.name}`)}
-                className="shadow-lg m-2 p-2 cursor-pointer rounded-lg group">
+                className="shadow-lg m-2 p-2 cursor-pointer rounded-lg group dark:bg-slate-800">
                 <img
                   src={playlist.videos[0].thumbnail}
                   alt={playlist.name}

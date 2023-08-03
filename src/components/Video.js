@@ -34,26 +34,15 @@ function Video({ video }) {
   }
 
   return (
-    <div className="col-span-6 md:col-span-4 flex flex-col shadow-md p-4 justify-start w-full bg-white rounded-lg px-10 pt-6">
+    <div className="col-span-6 md:col-span-4 flex flex-col shadow-md p-4 justify-start w-full rounded-lg px-10 pt-6 ">
       <div className="relative group w-full">
         <iframe
           title={title}
           src={src}
-          className="object-cover w-[100%] min-h-[20rem] rounded-lg group-hover:scale-110 transition-transform duration-150 ease-in-out"
+          className="object-cover aspect-video w-[100%] min-h-[20rem] rounded-lg group-hover:scale-110 transition-transform duration-150 ease-in-out"
         />
-        <button
-          className="absolute top-2 left-2 cursor-pointer bg-white rounded-full p-1 shadow-md"
-          onClick={() =>
-            watchLater ? removeFromWatchlist(video) : addToWatchlist(video)
-          }>
-          {watchLater ? (
-            <MdWatchLater className="w-6 h-6 text-blue-700" />
-          ) : (
-            <MdOutlineWatchLater className="w-6 h-6 text-blue-700" />
-          )}
-        </button>
       </div>
-      <span className="text-sm font-small text-gray-800 pt-4">
+      <span className="text-sm font-small text-gray-700 dark:text-gray-300 pt-4">
         {views} Views | {creator}
       </span>
       <div className="flex mt-3">
@@ -62,20 +51,30 @@ function Video({ video }) {
           alt={creator}
           className="w-10 h-10 rounded-full mr-3"
         />
-        <div className="flex flex-row items-center w-full justify-between">
+        <div className="flex flex-row items-center w-full justify-between ">
           <h2 className="text-lg font-medium">{title}</h2>
           <div className="flex">
-            <button onClick={() => setPlaylistModal(true)}>
-              {!playlists?.length > 0 ? (
-                <MdPlaylistAddCircle className="w-8 h-8 ml-2 text-blue-700" />
+            <button
+              className="cursor-pointer rounded-full p-1 shadow-md"
+              onClick={() =>
+                watchLater ? removeFromWatchlist(video) : addToWatchlist(video)
+              }>
+              {watchLater ? (
+                <MdWatchLater className="w-8 h-8 text-blue-700 dark:text-white" />
               ) : (
-                <MdPlaylistAddCheckCircle className="w-8 h-8 ml-2 text-blue-700" />
+                <MdOutlineWatchLater className="w-8 h-8 text-blue-700 dark:text-white" />
               )}
             </button>
-            <MdEdit
-              className="w-8 h-8 ml-2 text-blue-700"
-              onClick={() => setNoteModal(true)}
-            />
+            <button onClick={() => setPlaylistModal(true)}>
+              {!playlists?.length > 0 ? (
+                <MdPlaylistAddCircle className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
+              ) : (
+                <MdPlaylistAddCheckCircle className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
+              )}
+            </button>
+            <button onClick={() => setNoteModal(true)}>
+              <MdEdit className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
+            </button>
           </div>
 
           {noteModal && (

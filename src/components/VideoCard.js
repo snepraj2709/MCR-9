@@ -9,7 +9,7 @@ function VideoCard({ data }) {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col p-2 drop-shadow-md shadow-lg max-w-md rounded-lg overflow-hidden">
+    <div className="flex flex-col p-2 drop-shadow-md shadow-lg max-w-md rounded-lg overflow-hidden dark:bg-slate-800">
       <div className="relative group">
         <img
           src={thumbnail}
@@ -17,14 +17,14 @@ function VideoCard({ data }) {
           className="object-contain rounded-lg h-45 w-full group-hover:scale-110 transition-transform duration-150 ease-in-out"
         />
         <button
-          className="absolute top-2 right-2 cursor-pointer bg-white rounded-full p-1"
+          className="absolute top-2 right-2 cursor-pointer bg-white dark:bg-slate-900 rounded-full p-1"
           onClick={() =>
             watchLater ? removeFromWatchlist(data) : addToWatchlist(data)
           }>
           {watchLater ? (
-            <MdWatchLater className="w-6 h-6 text-blue-700 cursor-pointer" />
+            <MdWatchLater className="w-6 h-6 text-blue-700 dark:text-white cursor-pointer" />
           ) : (
-            <MdOutlineWatchLater className="w-6 h-6 text-blue-700 cursor-pointer" />
+            <MdOutlineWatchLater className="w-6 h-6 text-blue-700 dark:text-white cursor-pointer" />
           )}
         </button>
       </div>
@@ -34,7 +34,7 @@ function VideoCard({ data }) {
         <img src={avatar} alt={creator} className="w-10 h-10 rounded-full " />
         <div className="flex flex-col flex-grow justify-start">
           <h2 className="text-base font-medium pl-3 line-clamp-2">{title}</h2>
-          <span className="flex text-sm font-medium text-gray-800 pl-3 line-clamp-1 space-x-1">
+          <span className="flex text-sm font-medium text-gray-500 dark:text-gray-300 pl-3 line-clamp-1 space-x-1">
             <p className="line-clamp-1">{views} Views</p> |{" "}
             <p className="line-clamp-1">{creator}</p>
           </span>
