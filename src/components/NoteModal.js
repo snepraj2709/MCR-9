@@ -53,7 +53,7 @@ function NoteModal({ close, currentVideo }) {
             </button>
             <button
               className="border border-gray-800 cursor-pointer hover:underline py-2 px-3 mt-2 rounded-full text-sm"
-              onClick={submitNote}>
+              onClick={close}>
               Discard
             </button>
           </div>

@@ -43,12 +43,12 @@ function Video({ video }) {
   }
 
   return (
-    <div className="col-span-6 md:col-span-4 flex flex-col shadow-md p-4 justify-start w-full rounded-lg px-10 pt-6 ">
-      <div className="relative group w-full">
+    <div className=" md:col-span-4 flex flex-col shadow-md p-4 justify-start w-full rounded-lg px-10 pt-6 ">
+      <div className="relative w-full">
         <iframe
           title={title}
           src={src}
-          className="object-cover aspect-video w-[100%] min-h-[20rem] rounded-lg group-hover:scale-110 transition-transform duration-150 ease-in-out"
+          className="object-cover aspect-video w-[100%] min-h-[20rem] rounded-md"
         />
       </div>
       <span className="text-sm font-small text-gray-700 dark:text-gray-300 pt-4">
@@ -64,11 +64,11 @@ function Video({ video }) {
           <h2 className="text-lg font-medium">{title}</h2>
         </div>
 
-        <div className="flex flex-row justify-between my-auto mt-2">
-          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
-            <button
-              className="cursor-pointer rounded-full"
-              onClick={() => (like ? removeLike(video) : likeVideo(video))}>
+        <div className="flex flex-row justify-evenly my-auto mt-2">
+          <div
+            className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 cursor-pointer"
+            onClick={() => (like ? removeLike(video) : likeVideo(video))}>
+            <button className="rounded-full">
               {like ? (
                 <BiSolidLike className="w-8 h-8 text-blue-700 dark:text-white" />
               ) : (
@@ -77,12 +77,12 @@ function Video({ video }) {
             </button>
             <span className="my-auto hidden lg:inline-block">Like</span>
           </div>
-          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
-            <button
-              className="cursor-pointer rounded-full"
-              onClick={() =>
-                watchLater ? removeFromWatchlist(video) : addToWatchlist(video)
-              }>
+          <div
+            className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 cursor-pointer"
+            onClick={() =>
+              watchLater ? removeFromWatchlist(video) : addToWatchlist(video)
+            }>
+            <button className="rounded-full">
               {watchLater ? (
                 <MdWatchLater className="w-8 h-8 text-blue-700 dark:text-white" />
               ) : (
@@ -92,8 +92,10 @@ function Video({ video }) {
             <span className="my-auto hidden lg:inline-block">Watch Later</span>
           </div>
 
-          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
-            <button onClick={() => setPlaylistModal(true)}>
+          <div
+            className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 cursor-pointer"
+            onClick={() => setPlaylistModal(true)}>
+            <button>
               {!playlists?.length > 0 ? (
                 <MdPlaylistAddCircle className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
               ) : (
@@ -103,8 +105,10 @@ function Video({ video }) {
             <span className="my-auto hidden lg:inline-block">Playlist</span>
           </div>
 
-          <div className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 ">
-            <button onClick={() => setNoteModal(true)}>
+          <div
+            className="flex bg-slate-100 dark:bg-slate-700 rounded-full p-2 cursor-pointer"
+            onClick={() => setNoteModal(true)}>
+            <button>
               <MdEdit className="w-8 h-8 ml-2 text-blue-700 dark:text-white" />
             </button>
             <span className="my-auto hidden lg:inline-block">Notes</span>
@@ -129,7 +133,7 @@ function Video({ video }) {
               </p>
             </div>
             <MdDelete
-              className="w-8 h-8 ml-2 text-red-700"
+              className="w-8 h-8 ml-2 text-red-700 cursor-pointer"
               onClick={deleteNote}
             />
           </div>

@@ -1,7 +1,4 @@
-import Feed from "../components/Feed";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import { Header, Sidebar, Feed, Footer } from "../components/index";
 import { useData } from "../context/DataContext";
 import { actions } from "../utils/constants";
 import { useState } from "react";
@@ -21,27 +18,20 @@ export default function Explore() {
       dispatch({ type: actions.FilterVideo, payload: videos });
     }
   };
+  const categories = [...state?.category];
+  categories.unshift({ _id: 0, category: "All" });
 
   const classes =
-    " bg-slate-100 shadow-md p-2 rounded-full h-8 object-cover text-sm font-medium mx-1 my-auto cursor-pointer ";
+    "bg-slate-100 shadow-md p-2 rounded-full h-8 object-cover text-sm font-medium mx-1 my-auto cursor-pointer";
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
-        <Sidebar className="sticky top-0" />
-        <div className="flex flex-col col-span-6 ">
-          <div className="hidden md:inline-block  flex-row py-2">
-            <button
-              className={`${classes} ${
-                currentCategory.toLowerCase() === "all"
-                  ? "text-blue-500 dark:bg-slate-800 dark:text-white"
-                  : "text-gray-800"
-              }`}
-              onClick={() => clickHandler("All")}>
-              All
-            </button>
-            {state?.category?.map(({ category }) => (
+      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 gap-2 grow">
+        <Sidebar />
+        <div className="flex flex-col col-span-6">
+          <div className="hidden md:inline-block flex-row py-2">
+            {categories?.map(({ category }) => (
               <button
                 key={category._id}
                 className={`${classes} ${

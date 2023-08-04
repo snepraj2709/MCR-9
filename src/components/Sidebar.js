@@ -1,13 +1,11 @@
 import {
-  MdHome,
   BiSolidLike,
   MdExplore,
   MdWatchLater,
   MdPlaylistAddCircle,
   MdUpload,
 } from "../utils/icons";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -17,14 +15,18 @@ function Sidebar() {
   return (
     <div className="col-span-2 p-5">
       <NavLink
-        to="/"
+        to="/explore"
         className={({ isActive }) => {
           return isActive
             ? `${classes} text-blue-500`
             : `${classes} text-gray-800`;
         }}>
-        <MdHome className="sidebarIcon" />
-        <b className="hidden md:inline-block my-auto">Home</b>
+        <MdExplore className="sidebarIcon" />
+        <b
+          className="hidden md:inline-block my-auto"
+          onClick={() => navigate("/explore")}>
+          Explore
+        </b>
       </NavLink>
       <NavLink
         to="/liked"
@@ -38,20 +40,6 @@ function Sidebar() {
           className="hidden md:inline-block my-auto"
           onClick={() => navigate("/liked")}>
           Liked
-        </b>
-      </NavLink>
-      <NavLink
-        to="/explore"
-        className={({ isActive }) => {
-          return isActive
-            ? `${classes} text-blue-500`
-            : `${classes} text-gray-800`;
-        }}>
-        <MdExplore className="sidebarIcon" />
-        <b
-          className="hidden md:inline-block my-auto"
-          onClick={() => navigate("/explore")}>
-          Explore
         </b>
       </NavLink>
       <NavLink

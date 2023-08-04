@@ -1,12 +1,14 @@
 import { useState } from "react";
-import Feed from "../components/Feed";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import {
+  Header,
+  Sidebar,
+  Feed,
+  UploadVideoModal,
+  Footer,
+} from "../components/index";
 import { useData } from "../context/DataContext";
 import { MdUpload } from "../utils/icons";
 import { NavLink } from "react-router-dom";
-import UploadVideoModal from "../components/UploadVideoModal";
 
 function UploadVideo() {
   const { state } = useData();
@@ -19,11 +21,11 @@ function UploadVideo() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
+      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 gap-2 grow">
         <Sidebar />
         <div className="flex flex-col col-span-6">
           <div className="flex justify-between">
-            <h2 className="font-bold text-2xl ml-4">
+            <h2 className="font-bold text-2xl">
               Uploaded Videos ({uploadedVideos.length})
             </h2>
             <NavLink

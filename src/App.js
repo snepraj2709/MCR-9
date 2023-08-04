@@ -1,15 +1,17 @@
 import "./styles.css";
 import { Routes, Route } from "react-router-dom";
-import Explore from "./pages/Explore";
-import VideoDetail from "./pages/VideoDetail";
-import Watchlist from "./pages/Watchlist";
-import Playlist from "./pages/Playlist";
-import SinglePlaylist from "./pages/SinglePlaylist";
-import SingleCategory from "./pages/SingleCategory";
-import ToastWrapper from "./components/ToastWrapper";
-import LikedVideos from "./pages/LikedVideos";
-import Home from "./pages/Home";
-import UploadVideo from "./pages/UploadVideo";
+import { ToastWrapper } from "./components/index";
+import {
+  Explore,
+  VideoDetail,
+  Watchlist,
+  Playlist,
+  SinglePlaylist,
+  SingleCategory,
+  LikedVideos,
+  Home,
+  UploadVideo,
+} from "./pages/index";
 
 export default function App() {
   return (

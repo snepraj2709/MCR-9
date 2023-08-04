@@ -1,7 +1,4 @@
-import Feed from "../components/Feed";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import { Header, Sidebar, Feed, Footer } from "../components/index";
 import { useData } from "../context/DataContext";
 
 function Watchlist() {
@@ -10,11 +7,11 @@ function Watchlist() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="grid grid-cols-8 overflow-hidden lg:max-w-6xl px-5 grow">
+      <div className="grid grid-cols-8  lg:max-w-6xl px-5 gap-2 grow">
         <Sidebar />
-        <div className="flex flex-col col-span-6">
-          <h2 className="font-bold text-2xl ml-4">Watchlist</h2>
-          <Feed list={watchlist} page="Watchlist" />
+        <div className="col-span-6 flex flex-col">
+          <h2 className="font-bold text-2xl">Watchlist</h2>
+          <Feed list={watchlist} />
         </div>
       </div>
       <Footer />
