@@ -45,6 +45,7 @@ export default function Explore() {
             ))}
             <h2 className="font-bold text-2xl ml-4 pt-4">{currentCategory}</h2>
           </div>
+          <h2 className="font-bold text-2xl ml-4 pt-4 md:hidden">Explore</h2>
           <Feed list={state?.filteredVideos} page="Explore" />
         </div>
       </div>
